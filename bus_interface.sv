@@ -8,6 +8,7 @@ module bus_interface (
    output logic   [7:0] write_line,
    output logic         transmit_write_en,
    output logic         baud_write_en,
+   output logic         baud_write_location,
    inout logic    [7:0] databus,
    );
 
