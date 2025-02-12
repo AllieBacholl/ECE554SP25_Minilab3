@@ -23,28 +23,26 @@ always_ff@ (posedge clk, negedge rst_n) begin
         down_cnt <= 16'h0000;
     end
     else begin
-        case (ioaddr)
-            // Set DB(Low)
-            2'b10: begin
-                db[7:0] <= db_value;
+        // Set DB(Low)
+        if (baud_write_en && !baud_write_location) begin
+            db[7:0] <= baud_generator_write_line;
+        end
+        // Set DB(High)
+        else if (baud_write_en && baud_write_location) begin
+            db[15:8] <= baud_generator_write_line;
+        end
+        // Calculate enable signals
+        else begin
+            if (down_cnt == 16'h0000) begin
+                down_cnt <= db;
+                transmit_baud <= 1'b1;
+                receive_baud <= 1'b1;
+            end else begin
+                down_cnt <= down_cnt - 1'b1;
+                transmit_baud <= 1'b0;
+                receive_baud <= 1'b0;
             end
-            // Set DB(High)
-            2'b11: begin
-                db[15:8] <= db_value;
-            end
-            // Calculate enable signals
-            default: begin
-                if (down_cnt == 16'h0000) begin
-                    down_cnt <= db;
-                    transmit_baud <= 1'b1;
-                    receive_baud <= 1'b1;
-                end else begin
-                    down_cnt <= down_cnt - 1'b1;
-                    transmit_baud <= 1'b0;
-                    receive_baud <= 1'b0;
-                end
-            end
-        endcase
+        end
     end
 end
 
