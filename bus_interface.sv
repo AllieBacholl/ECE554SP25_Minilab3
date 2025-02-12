@@ -9,6 +9,6 @@ module bus_interface (
    output logic         transmit_write_enable,
    output logic         baud_write_enable,
    inout logic    [7:0] databus,
-);
+   );
 
 endmodule

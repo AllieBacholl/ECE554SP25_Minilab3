@@ -7,7 +7,6 @@ module transmit (
    input logic    [7:0] transmit_write_line,
    output logic         txd,
    output logic         tbr,
-   
-);
+   );
 
 endmodule
