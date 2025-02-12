@@ -1,6 +1,8 @@
 module receive (
    input logic          clk,
    input logic          rst_n,
+   input logic          iocs,
+   input logic          iorw,
    input logic          rxd,
    input logic          receive_en,
    output logic         rda,
