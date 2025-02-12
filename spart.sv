@@ -70,7 +70,12 @@ module spart(
 
     baud_generator baud_generator0
     (
-
+        clk,
+        rst_n,
+        ioaddr,
+        db_value,
+        transmit_baud,
+        receive_baud,
     );
 
     bus_interface bus_interface0
