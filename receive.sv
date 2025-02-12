@@ -5,7 +5,6 @@ module bus_interface(
    input logic          receive_en,
    output logic         rda,
    output logic   [7:0] recieve_read_line,
-
 );
 
 endmodule
