@@ -34,6 +34,7 @@ module spart(
     logic       transmit_write_en;
     logic       receive_read_en;
     logic       baud_write_en;
+    logic       baud_write_location;
     logic       transmit_baud;
     logic       receive_baud;
     logic [7:0] register_write_line;
@@ -74,9 +75,9 @@ module spart(
         .rst_n(rst_n),
         .baud_write_en(baud_write_en),
         .write_location(),
-        .baud_generator_write_line,
-        .transmit_baud,
-        .receive_baud
+        .baud_generator_write_line(register_write_line),
+        .transmit_baud(transmit_baud),
+        .receive_baud(receive_baud),
     );
 
     bus_interface bus_interface0
@@ -90,6 +91,7 @@ module spart(
         .write_line(register_write_line),
         .transmit_write_en(transmit_write_en),
         .baud_write_en(baud_write_en),
+        .baud_write_location(baud_write_location)
         .databus(databus),
     );
 

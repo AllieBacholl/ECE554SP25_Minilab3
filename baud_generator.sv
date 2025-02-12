@@ -2,10 +2,10 @@ module baud_generator(
     input       clk,
     input       rst_n,
     input       baud_write_en,
-    input       write_location,
+    input       baud_write_location,
     input [7:0] baud_generator_write_line,
     output      transmit_baud,
-    output      receive_baud
+    output      receive_baud,
     );
 
 logic [15:0] down_cnt;
