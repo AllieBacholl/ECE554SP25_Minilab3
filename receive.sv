@@ -1,4 +1,4 @@
-module bus_interface(
+module receive(
    input logic          clk,
    input logic          rst_n,
    input logic          rxd,
