@@ -1,4 +1,4 @@
-module receive(
+module receive (
    input logic          clk,
    input logic          rst_n,
    input logic          rxd,

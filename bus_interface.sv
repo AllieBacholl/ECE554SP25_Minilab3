@@ -1,4 +1,4 @@
-module bus_interface(
+module bus_interface (
    input logic          iocs,
    input logic          iorw,
    input logic          rda,
