@@ -4,10 +4,10 @@ module bus_interface (
    input logic          rda,
    input logic          tbr,
    input logic    [7:0] recieve_read_line,
-   output logic         recieve_read_enable,
+   output logic         recieve_read_en,
    output logic   [7:0] write_line,
-   output logic         transmit_write_enable,
-   output logic         baud_write_enable,
+   output logic         transmit_write_en,
+   output logic         baud_write_en,
    inout logic    [7:0] databus,
    );
 

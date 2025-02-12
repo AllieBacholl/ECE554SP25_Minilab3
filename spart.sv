@@ -33,6 +33,7 @@ module spart(
     // Intermediate Signals
     logic       transmit_write_en;
     logic       receive_read_en;
+    logic       baud_write_en;
     logic       transmit_baud;
     logic       receive_baud;
     logic [7:0] register_write_line;
@@ -48,7 +49,7 @@ module spart(
         .iocs(iocs),
         .iorw(iorw),
         .transmit_baud(transmit_baud),
-        .transmit_write_en(transmit_en),
+        .transmit_write_en(transmit_write_en),
         .transmit_write_line(register_write_line),
         .txd(txd),
         .tbr(tbr),
@@ -69,12 +70,27 @@ module spart(
 
     baud_generator baud_generator0
     (
-
+        .clk(clk),
+        .rst_n(rst_n),
+        .baud_write_en(baud_write_en),
+        .write_location(),
+        .baud_generator_write_line,
+        .transmit_baud,
+        .receive_baud
     );
 
     bus_interface bus_interface0
     (
-
+        .iocs(iocs),
+        .iorw(iorw),
+        .rda(rda),
+        .tbr(tbr),
+        .recieve_read_line(recieve_read_line),
+        .recieve_read_en(recieve_read_en),
+        .write_line(register_write_line),
+        .transmit_write_en(transmit_write_en),
+        .baud_write_en(baud_write_en),
+        .databus(databus),
     );
 
 
