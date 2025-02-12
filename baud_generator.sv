@@ -7,6 +7,7 @@ module baud_generator(
     output receive_baud
     );
 
+logic [15:0] db;
 logic [15:0] down_cnt;
 
 // divisor = (clock frequency/(2^n × baud rate) − 1)
@@ -18,22 +19,24 @@ always_ff@ (posedge clk, negedge rst_n) begin
     if (rst_n) begin
         transmit_baud <= 1'b0;
         receive_baud <= 1'b0;
+        down_cnt <= 16'h0000;
     end
     else begin
         case (ioaddr)
             // Set DB(Low)
             2'b10: begin
-                down_cnt[7:0] <= db_value;
+                db[7:0] <= db_value;
             end
             // Set DB(High)
             2'b11: begin
-                down_cnt[15:8] <= db_value;
+                db[15:8] <= db_value;
             end
             // Calculate enable signals
             default: begin
-
+                if (down_cnt == 16'h0000) begin
+                end else begin
+                end
             end
-
         endcase
     end
 end
