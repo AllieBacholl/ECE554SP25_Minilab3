@@ -34,7 +34,13 @@ always_ff@ (posedge clk, negedge rst_n) begin
             // Calculate enable signals
             default: begin
                 if (down_cnt == 16'h0000) begin
+                    down_cnt <= db;
+                    transmit_baud <= 1'b1;
+                    receive_baud <= 1'b1;
                 end else begin
+                    down_cnt <= down_cnt - 1'b1;
+                    transmit_baud <= 1'b0;
+                    receive_baud <= 1'b0;
                 end
             end
         endcase
