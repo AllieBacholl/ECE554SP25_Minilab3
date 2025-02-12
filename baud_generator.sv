@@ -3,7 +3,7 @@ module baud_generator(
     input       rst_n,
     input       baud_write_en,
     input       write_location,
-    input [7:0] baud_generator_read_line,
+    input [7:0] baud_generator_write_line,
     output      transmit_baud,
     output      receive_baud
     );
