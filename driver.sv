@@ -94,7 +94,7 @@ module driver(
                 ioaddr = 2'b11;
                 write_data = baud_rate[15:8];
                 if (br_cfg != br_cfg_ff)
-                    next_state = StART_WAIT1;
+                    next_state = START_WAIT1;
                 else
                     next_state = WAIT;
             WAIT:
