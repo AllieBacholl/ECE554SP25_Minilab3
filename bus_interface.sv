@@ -17,7 +17,7 @@ module bus_interface (
    logic [7:0] read_data;
 
    // Logic for handling ownership of the databus signal
-   assign databus = iorw ? read_data : 7'bz;
+   assign databus = iocs ? (iorw ? read_data : 7'bz) : 7'bz;
    assign read_data = io_addr[0] ? {6'h00, tbr, rda} : receive_read_line;
    assign write_line = databus;
 

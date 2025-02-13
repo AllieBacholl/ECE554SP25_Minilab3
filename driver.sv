@@ -37,7 +37,7 @@ module driver(
     enum    logic   [2:0]   {START_WAIT1, START1, START_WAIT2, START2, WAIT, RECEIVE, TRANSMIT_WAIT, TRANSMIT} state, next_state;
 
     // Logic for handling ownership of the databus signal
-    assign databus = iorw ? 7'bz : write_data;
+    assign databus = iocs ? (iorw ? 7'bz : write_data) : 7'bz;
 
     // Logic for determining the right baud rate
     always_comb begin
