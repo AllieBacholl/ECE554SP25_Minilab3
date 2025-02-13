@@ -12,9 +12,11 @@ module bus_interface (
    inout logic    [7:0] databus,
    );
 
+   // Intermediate signals
    logic [7:0] write_data;
    logic [7:0] read_data;
 
+   // Logic for handling ownership of the databus signal
    assign databus = iorw ? read_data : 7'bz;
    assign write_data = databus;
 
