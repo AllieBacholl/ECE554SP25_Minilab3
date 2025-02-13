@@ -15,7 +15,6 @@ module bus_interface (
 
    // Intermediate signals
    logic [7:0] read_data;
-   logic [7:0] status_reg;
 
    // Logic for handling ownership of the databus signal
    assign databus = iorw ? read_data : 7'bz;
@@ -26,7 +25,6 @@ module bus_interface (
       receive_read_en = 1'b0;
       transmit_write_en = 1'b0;
       baud_write_en = 1'b0;
-      status_reg = 8'h00;
       // 0 is lower, 1 is upper 8 bits
       baud_write_location = 1'b0;
 

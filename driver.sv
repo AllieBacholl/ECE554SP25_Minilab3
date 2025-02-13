@@ -105,6 +105,7 @@ module driver(
                 iocs = 1;
                 iorw = 1;
                 ioaddr = 2'b00;
+                read_data_next = databus;
                 else
                     next_state = TRANSMIT_WAIT
             TRANSMIT_WAIT:
@@ -115,6 +116,7 @@ module driver(
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b00;
+                write_data = read_data;
                 else
                     next_state = WAIT;
 
