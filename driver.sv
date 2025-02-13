@@ -19,7 +19,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 module driver(
     input logic             clk,
-    input logic             rst,
+    input logic             rst_n,
     input logic     [1:0]   br_cfg,
     output logic            iocs,
     output logic            iorw,
