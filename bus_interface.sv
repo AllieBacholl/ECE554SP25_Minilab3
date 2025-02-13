@@ -31,7 +31,7 @@ module bus_interface (
       baud_write_location = 1'b0;
 
       case({ioaddr, iocs})
-         3'b00: begin
+         3'b001: begin
             if (iorw) begin
                receive_read_en = 1'b1;
             end
