@@ -28,34 +28,32 @@ module bus_interface (
       // 0 is lower, 1 is upper 8 bits
       baud_write_location = 1'b0;
 
-      case({ioaddr, iocs})
-         3'b001: begin
-            if (iorw) begin
-               receive_read_en = 1'b1;
-            end
-            else (iorw) begin
-               transmit_write_en = 1'b1;
-            end
+      if (ioaddr == 2'b00 && iocs == 1'b1) begin
+         if (iorw) begin
+            receive_read_en = 1'b1;
          end
+         else (iorw) begin
+            transmit_write_en = 1'b1;
+         end
+      end
 
-         3'b011: begin
-            // Nothing to enable
-         end
+      else if (ioaddr == 2'b01 && iocs == 1'b1) begin
+         // Nothing to enable
+      end
 
-         3'b101: begin
-            baud_write_en = 1'b1;
-            baud_write_location = 1'b0;
-         end
+      else if (ioaddr == 2'b10 && iocs == 1'b1) begin
+         baud_write_en = 1'b1;
+         baud_write_location = 1'b0;
+      end
 
-         3'b111: begin
-            baud_write_en = 1'b1;
-            baud_write_location = 1'b1;
-         end
+      else if (ioaddr == 2'b11 && iocs == 1'b1) begin
+         baud_write_en = 1'b1;
+         baud_write_location = 1'b1;
+      end
 
-         default: begin
-            // Default do nothing since CS is low
-         end
-      endcase
+      else begin
+         // Default do nothing since CS is low
+      end
    end
 
 

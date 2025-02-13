@@ -27,16 +27,16 @@ spart iSPART (.clk(CLOCK_50), .rst_n(key[0]), .iocs(iocs), .iorw(iorw), .rda(rda
     CLOCK2_50 = 0;
     CLOCK_50 = 0; 
 
-    key = 4'b1111;
-    sw = 10'h0;
-    iorw = 1'b0;
-    ioaddr = 2'b00;
-    iocs = 1'b0;
+    key = '0;
+    sw = '0;
+    iorw = '0;
+    ioaddr = '0;
+    iocs = '0;
 
     repeat (2) @(posedge CLOCK_50);
-    key[0] = 0;
-    repeat (4) @(posedge CLOCK_50);
     key[0] = 1;
+    repeat (4) @(posedge CLOCK_50);
+    key[0] = 0;
 
     // Baud rate set tp 4800 bps at 50 MHz
     iorw = 1'b0;
