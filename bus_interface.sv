@@ -19,7 +19,7 @@ module bus_interface (
 
    // Logic for handling ownership of the databus signal
    assign databus = iorw ? read_data : 7'bz;
-   assign read_data = io_addr[0] ? {6'b0, tbr, rda} : recei
+   assign read_data = io_addr[0] ? {6'b0, tbr, rda} : receive_read_line;
    assign write_line = databus;
 
    always_comb begin
