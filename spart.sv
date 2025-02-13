@@ -38,7 +38,7 @@ module spart(
     logic       transmit_baud;
     logic       receive_baud;
     logic [7:0] register_write_line;
-    logic [7:0] recieve_read_line;
+    logic [7:0] receive_read_line;
     logic       tbr;
     logic       rda;
 
@@ -63,10 +63,10 @@ module spart(
         .iocs(iocs),
         .iorw(iorw),
         .rxd(rxd),
-        .receive_baud(recieve_baud),
+        .receive_baud(receive_baud),
         .receive_read_en(receive_read_en),
         .rda(rda),
-        .recieve_read_line(recieve_read_line),
+        .receive_read_line(receive_read_line),
     );
 
     baud_generator baud_generator0
@@ -87,8 +87,8 @@ module spart(
         .rda(rda),
         .tbr(tbr),
         .ioaddr(ioaddr);
-        .recieve_read_line(recieve_read_line),
-        .recieve_read_en(recieve_read_en),
+        .receive_read_line(receive_read_line),
+        .receive_read_en(receive_read_en),
         .write_line(register_write_line),
         .transmit_write_en(transmit_write_en),
         .baud_write_en(baud_write_en),

@@ -2,10 +2,10 @@ module receive (
    input logic          clk,
    input logic          rst_n,
    input logic          rxd,
-   input logic          recieve_baud,
+   input logic          receive_baud,
    input logic          receive_read_en,
    output logic         rda,
-   output logic   [7:0] recieve_read_line,
+   output logic   [7:0] receive_read_line,
    );
 
     logic set_rda;
@@ -27,7 +27,7 @@ module receive (
     state_t state,nxt_state;
 
     // logic for asserting shift
-    assign shift = recieve_baud;
+    assign shift = receive_baud;
 
     //  Shift Counter   //
     always_ff @(posedge clk)
@@ -92,11 +92,11 @@ module receive (
 	always_ff @(posedge clk, negedge rst_n)
       if (!rst_n) begin
          rda <= 1'b0;
-         recieve_read_line <= 8'h00;
+         receive_read_line <= 8'h00;
       end
       else if (set_rda) begin
          rda <= set_rda;
-         recieve_read_line <= rx_data_buffer;
+         receive_read_line <= rx_data_buffer;
       end
 	   else if (receive_read_en) 
 			rda <= 1'b0;
