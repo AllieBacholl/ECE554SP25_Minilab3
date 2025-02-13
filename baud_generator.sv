@@ -21,6 +21,8 @@ always_ff@ (posedge clk, negedge rst_n) begin
         transmit_baud <= 1'b0;
         receive_baud <= 1'b0;
         down_cnt <= 16'h0000;
+        // Default to 50 MHz at 9600 bps
+        db <= 16'd326;
     end
     else begin
         // Set DB(Low)
