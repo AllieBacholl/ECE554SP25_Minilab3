@@ -4,8 +4,8 @@ module bus_interface (
    input logic          rda,
    input logic          tbr,
    input logic    [1:0] ioaddr;
-   input logic    [7:0] recieve_read_line,
-   output logic         recieve_read_en,
+   input logic    [7:0] receive_read_line,
+   output logic         receive_read_en,
    output logic   [7:0] write_line,
    output logic         transmit_write_en,
    output logic         baud_write_en,
@@ -18,11 +18,12 @@ module bus_interface (
    logic [7:0] status_reg;
 
    // Logic for handling ownership of the databus signal
-   assign databus = (ioaddr == 2'b01) ? status_reg : (iorw ? read_data : 8'bz);
+   assign databus = iorw ? read_data : 7'bz;
+   assign read_data = io_addr[0] ? {6'b0, tbr, rda} : recei
    assign write_line = databus;
 
    always_comb begin
-      recieve_read_en = 1'b0;
+      receive_read_en = 1'b0;
       transmit_write_en = 1'b0;
       baud_write_en = 1'b0;
       status_reg = 8'h00;
@@ -32,7 +33,7 @@ module bus_interface (
       case({ioaddr, iocs})
          3'b00: begin
             if (iorw) begin
-               recieve_read_en = 1'b1;
+               receive_read_en = 1'b1;
             end
             else (iorw) begin
                transmit_write_en = 1'b1;

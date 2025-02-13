@@ -55,7 +55,11 @@ module driver(
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
             state = START_WAIT1;
-            br_cfg_ff = 0;
+            br_cfg_ff = br_cfg;
+        end
+        else if (br_cfg != br_cfg_ff) begin
+            state = START_WAIT1;
+            br_cfg_ff = br_cfg;
         end
         else begin
             state = next_state;
@@ -84,39 +88,35 @@ module driver(
                 next_state = START_WAIT2;
             START_WAIT2:
                 iocs = 0;
-                if (br_cfg != br_cfg_ff)
-                    next_state = StART_WAIT1;
-                if (tbr):
+                else if (tbr):
                     next_state = START2;
             START2:
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b11;
                 write_data = baud_rate[15:8];
-                if (br_cfg != br_cfg_ff)
-                    next_state = START_WAIT1;
                 else
                     next_state = WAIT;
             WAIT:
                 iocs = 0;
-                if (br_cfg != br_cfg_ff)
-                    next_state = StART_WAIT1;
                 if(rda)
                     next_state = RECEIVE
             RECEIVE:
                 iocs = 1;
                 iorw = 1;
                 ioaddr = 2'b00;
-                next_state = TRANSMIT_WAIT
+                else
+                    next_state = TRANSMIT_WAIT
             TRANSMIT_WAIT:
             iocs = 0;
-                if (tbr):
+                else if (tbr):
                     next_state = TRANSMIT;
             TRANSMIT:
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b00;
-                next_state = WAIT;
+                else
+                    next_state = WAIT;
 
         endcase
     end
