@@ -74,7 +74,7 @@ module spart(
         .clk(clk),
         .rst_n(rst_n),
         .baud_write_en(baud_write_en),
-        .write_location(),
+        .write_location(baud_write_location),
         .baud_generator_write_line(register_write_line),
         .transmit_baud(transmit_baud),
         .receive_baud(receive_baud),
@@ -86,6 +86,7 @@ module spart(
         .iorw(iorw),
         .rda(rda),
         .tbr(tbr),
+        .ioaddr(ioaddr);
         .recieve_read_line(recieve_read_line),
         .recieve_read_en(recieve_read_en),
         .write_line(register_write_line),
