@@ -12,4 +12,10 @@ module bus_interface (
    inout logic    [7:0] databus,
    );
 
+   logic [7:0] write_data;
+   logic [7:0] read_data;
+
+   assign databus = iorw ? read_data : 7'bz;
+   assign write_data = databus;
+
 endmodule
