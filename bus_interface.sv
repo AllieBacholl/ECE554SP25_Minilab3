@@ -19,7 +19,7 @@ module bus_interface (
 
    // Logic for handling ownership of the databus signal
    assign databus = iorw ? read_data : 7'bz;
-   assign read_data = io_addr[0] ? {6'b0, tbr, rda} : receive_read_line;
+   assign read_data = io_addr[0] ? {6'h00, tbr, rda} : receive_read_line;
    assign write_line = databus;
 
    always_comb begin
@@ -41,11 +41,12 @@ module bus_interface (
          end
 
          3'b011: begin
-            status_reg = {6'h00, tbr, rda};
+            // Nothing to enable
          end
 
          3'b101: begin
             baud_write_en = 1'b1;
+            baud_write_location = 1'b0;
          end
 
          3'b111: begin
