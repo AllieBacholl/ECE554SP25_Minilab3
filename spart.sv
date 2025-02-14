@@ -39,8 +39,6 @@ module spart(
     logic       receive_baud;
     logic [7:0] register_write_line;
     logic [7:0] receive_read_line;
-    logic       tbr;
-    logic       rda;
 
     // Module instantiations
     transmit transmit0
@@ -86,13 +84,13 @@ module spart(
         .iorw(iorw),
         .rda(rda),
         .tbr(tbr),
-        .ioaddr(ioaddr);
+        .ioaddr(ioaddr),
         .receive_read_line(receive_read_line),
         .receive_read_en(receive_read_en),
         .write_line(register_write_line),
         .transmit_write_en(transmit_write_en),
         .baud_write_en(baud_write_en),
-        .baud_write_location(baud_write_location)
+        .baud_write_location(baud_write_location),
         .databus(databus),
     );
 
