@@ -26,7 +26,7 @@ module driver(
     input logic             rda,
     input logic             tbr,
     output logic    [1:0]   ioaddr,
-    inout logic     [7:0]   databus,
+    inout logic     [7:0]   databus
     );
 
     // Intermediate signals
@@ -43,11 +43,11 @@ module driver(
     always_comb begin
         if (br_cfg == 2'b00)
             baud_rate = 651;
-        if (br_cfg == 2'b01)
+        else if (br_cfg == 2'b01)
             baud_rate = 326;
-        if (br_cfg == 2'b10)
+        else if (br_cfg == 2'b10)
             baud_rate = 163;
-        if (br_cfg == 2'b11)
+        else 
             baud_rate = 81;
     end
 
@@ -72,51 +72,59 @@ module driver(
     always_comb begin
         next_state = state;
         read_data_next = read_data;
+        write_data = '0;
         iorw = 0;
         ioaddr = 2'b00;
         iocs = 0;
         case(state)
-            START_WAIT1:
+            START_WAIT1: begin
                 iocs = 0;
-                if (tbr):
+                if (tbr)
                     next_state = START1;
-            START1:
+            end
+            START1: begin
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b10;
                 write_data = baud_rate[7:0];
                 next_state = START_WAIT2;
-            START_WAIT2:
+            end
+            START_WAIT2: begin
                 iocs = 0;
-                if (tbr):
+                if (tbr)
                     next_state = START2;
-            START2:
+            end
+            START2: begin
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b11;
                 write_data = baud_rate[15:8];
                 next_state = WAIT;
-            WAIT:
+            end
+            WAIT: begin
                 iocs = 0;
                 if(rda)
-                    next_state = RECEIVE
-            RECEIVE:
+                    next_state = RECEIVE;
+            end
+            RECEIVE: begin
                 iocs = 1;
                 iorw = 1;
                 ioaddr = 2'b00;
                 read_data_next = databus;
-                next_state = TRANSMIT_WAIT
-            TRANSMIT_WAIT:
+                next_state = TRANSMIT_WAIT;
+            end
+            TRANSMIT_WAIT: begin
                 iocs = 0;
-                if (tbr):
+                if (tbr)
                     next_state = TRANSMIT;
-            TRANSMIT:
+            end
+            TRANSMIT: begin
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b00;
                 write_data = read_data;
                 next_state = WAIT;
-
+            end
         endcase
     end
 

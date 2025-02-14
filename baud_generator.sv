@@ -17,7 +17,7 @@ logic [15:0] down_cnt;
 // Divisor values are 651, 326, 163, 81
 
 always_ff@ (posedge clk, negedge rst_n) begin
-    if (rst_n) begin
+    if (!rst_n) begin
         transmit_baud <= 1'b0;
         receive_baud <= 1'b0;
         down_cnt <= 16'h0000;

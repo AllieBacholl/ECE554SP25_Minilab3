@@ -45,8 +45,6 @@ module spart(
     (
         .clk(clk),
         .rst_n(rst_n),
-        .iocs(iocs),
-        .iorw(iorw),
         .transmit_baud(transmit_baud),
         .transmit_write_en(transmit_write_en),
         .transmit_write_line(register_write_line),
@@ -58,8 +56,6 @@ module spart(
     (
         .clk(clk),
         .rst_n(rst_n),
-        .iocs(iocs),
-        .iorw(iorw),
         .rxd(rxd),
         .receive_baud(receive_baud),
         .receive_read_en(receive_read_en),
@@ -72,7 +68,7 @@ module spart(
         .clk(clk),
         .rst_n(rst_n),
         .baud_write_en(baud_write_en),
-        .write_location(baud_write_location),
+        .baud_write_location(baud_write_location),
         .baud_generator_write_line(register_write_line),
         .transmit_baud(transmit_baud),
         .receive_baud(receive_baud),
