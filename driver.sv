@@ -88,15 +88,14 @@ module driver(
                 next_state = START_WAIT2;
             START_WAIT2:
                 iocs = 0;
-                else if (tbr):
+                if (tbr):
                     next_state = START2;
             START2:
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b11;
                 write_data = baud_rate[15:8];
-                else
-                    next_state = WAIT;
+                next_state = WAIT;
             WAIT:
                 iocs = 0;
                 if(rda)
@@ -106,19 +105,17 @@ module driver(
                 iorw = 1;
                 ioaddr = 2'b00;
                 read_data_next = databus;
-                else
-                    next_state = TRANSMIT_WAIT
+                next_state = TRANSMIT_WAIT
             TRANSMIT_WAIT:
-            iocs = 0;
-                else if (tbr):
+                iocs = 0;
+                if (tbr):
                     next_state = TRANSMIT;
             TRANSMIT:
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b00;
                 write_data = read_data;
-                else
-                    next_state = WAIT;
+                next_state = WAIT;
 
         endcase
     end
