@@ -5,7 +5,7 @@ module receive (
    input logic          receive_baud,
    input logic          receive_read_en,
    output logic         rda,
-   output logic   [7:0] receive_read_line,
+   output logic   [7:0] receive_read_line
    );
 
     logic set_rda;
@@ -31,7 +31,7 @@ module receive (
 
     //  Shift Counter   //
     always_ff @(posedge clk)
-        case(sel) inside
+        case(sel)
             2'b1?: bit_cnt <= 4'h0;
             2'b01: bit_cnt <= bit_cnt + 1'b1; 
         endcase
