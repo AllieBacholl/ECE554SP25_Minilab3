@@ -4,8 +4,8 @@ module baud_generator(
     input       baud_write_en,
     input       baud_write_location,
     input [7:0] baud_generator_write_line,
-    output      transmit_baud,
-    output      receive_baud
+    output reg  transmit_baud,
+    output reg  receive_baud
     );
 
 logic [15:0] db;
