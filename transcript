@@ -1,0 +1,115 @@
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv failed with 2 errors.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 1 failed with 2 errors.
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+vsim work.Minilab3_tb
+# vsim work.Minilab3_tb 
+# Start time: 13:50:18 on Feb 16,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Failed: timed out waiting for data ready signal from the test bench receiver
+# 
+# Test 1 Passed: loopback of one byte successful
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(106)
+#    Time: 123985 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 106
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Failed: timed out waiting for data ready signal from the test bench receiver
+# 
+# Test 1 Passed: loopback of one byte successful
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(106)
+#    Time: 123985 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 106
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Failed: timed out waiting for data ready signal from the test bench receiver
+# 
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(91)
+#    Time: 100095 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 91

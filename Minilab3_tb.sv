@@ -53,7 +53,9 @@ spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rd
    data_write = 8'h02;
    @(posedge CLOCK_50);
 
-   // Send data
+   $display("Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800");
+   @(posedge CLOCK_50);
+   iocs = 1;
    ioaddr = 2'b00;
    data_write = 8'hb4;
    iorw = 1'b0;
@@ -61,18 +63,29 @@ spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rd
    @(posedge CLOCK_50);
    iocs = 0;
    iorw = 1'b1;
-
-   // Wait to receive data
-   @(posedge rda)
-
-   if (databus != 8'hb4) begin
-   $display("Error: databus should be 8'hb4 but is %h", databus);
-   end
-   else begin
-   $display("Test 1 Passed: loopback of one byte successful");
-   end
-
-
+   fork : timeout
+      begin
+         // Timeout check
+         repeat (10000) @(posedge CLOCK_50);
+         $display("Test 1 Failed: timed out waiting for data ready signal from the test bench receiver\n");
+         disable timeout;
+      end
+      begin
+         // Correctness check
+         @(posedge rda);
+         disable timeout;
+         iocs = 1;
+         @(posedge CLOCK_50);
+         if (databus !== 8'hb4) begin
+            $display("Test 1 Failed: databus should be 0xb4 but is 0x%h\n", databus);
+         end
+         else begin
+            $display("Test 1 Passed\n");
+         end
+         @(posedge CLOCK_50);
+         iocs = 0;
+      end
+   join
 
    $display("End of tests");
    $stop();
