@@ -84,7 +84,7 @@ module receive (
             RECEIVING: begin
                receiving = 1'b1;
 				   // Shifted 10 bits
-               if (bit_cnt == 4'h9) begin
+               if (bit_cnt == 4'hA) begin
                   nxt_state = IDLE;
                   set_rda = 1'b1;
                end

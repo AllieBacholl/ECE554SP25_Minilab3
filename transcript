@@ -758,3 +758,79 @@ run -all
 # ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(717)
 #    Time: 2031695 ps  Iteration: 2  Instance: /Minilab3_tb
 # Break in Module Minilab3_tb at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 717
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.Minilab3(fast)
+# Loading work.spart(fast)
+# Loading work.transmit(fast)
+# Loading work.receive(fast)
+# Loading work.baud_generator(fast)
+# Loading work.bus_interface(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Passed
+# 
+# Test 2: try sending 0xff and check for loopback from DUT at a baud rate of 4800
+# Test 2 Passed
+# 
+# Test 3: try sending 0x01 and check for loopback from DUT at a baud rate of 4800
+# Test 3 Passed
+# 
+# Test 4: try sending 0x00 and check for loopback from DUT at a baud rate of 4800
+# Test 4 Passed
+# 
+# Test 5: try sending 0xbf and check for loopback from DUT at a baud rate of 9600
+# Test 5 Passed
+# 
+# Test 6: try sending 0xff and check for loopback from DUT at a baud rate of 9600
+# Test 6 Passed
+# 
+# Test 7: try sending 0x01 and check for loopback from DUT at a baud rate of 9600
+# Test 7 Passed
+# 
+# Test 8: try sending 0x00 and check for loopback from DUT at a baud rate of 9600
+# Test 8 Passed
+# 
+# Test 9: try sending 0xbf and check for loopback from DUT at a baud rate of 19200
+# Test 9 Passed
+# 
+# Test 10: try sending 0xff and check for loopback from DUT at a baud rate of 19200
+# Test 10 Passed
+# 
+# Test 11: try sending 0x01 and check for loopback from DUT at a baud rate of 19200
+# Test 11 Failed: databus should be 0x01 but is 0x43
+# 
+# Test 12: try sending 0x00 and check for loopback from DUT at a baud rate of 19200
+# Test 12 Failed: databus should be 0x00 but is 0x42
+# 
+# Test 13: try sending 0xbf and check for loopback from DUT at a baud rate of 38400
+# Test 13 Passed
+# 
+# Test 14: try sending 0xff and check for loopback from DUT at a baud rate of 38400
+# Test 14 Passed
+# 
+# Test 15: try sending 0x01 and check for loopback from DUT at a baud rate of 38400
+# Test 15 Failed: databus should be 0x01 but is 0x09
+# 
+# Test 16: try sending 0x00 and check for loopback from DUT at a baud rate of 38400
+# Test 16 Failed: databus should be 0x00 but is 0x42
+# 
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(717)
+#    Time: 1459605 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break in Module Minilab3_tb at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 717
