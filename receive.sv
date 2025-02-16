@@ -5,7 +5,8 @@ module receive (
    input logic          receive_baud,
    input logic          receive_read_en,
    output logic         rda,
-   output logic   [7:0] receive_read_line
+   output logic         receive_start,
+   output logic   [7:0] receive_read_line,
    );
 
     logic set_rda;
@@ -69,11 +70,13 @@ module receive (
         receiving = 1'b0;
         set_rda = 1'b0;
         nxt_state = state;
+        receive_start = 1'b0;
 
         case (state)
             // Recieving started when RX low
             IDLE: if (!RX_flop2) begin
                 start = 1'b1;
+                receive_start = 1'b1;
                 nxt_state = RECEIVING;
             end
             

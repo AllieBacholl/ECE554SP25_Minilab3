@@ -37,6 +37,7 @@ module spart(
     logic       baud_write_location;
     logic       transmit_baud;
     logic       receive_baud;
+    logic       receive_start;
     logic [7:0] register_write_line;
     logic [7:0] receive_read_line;
 
@@ -49,7 +50,7 @@ module spart(
         .transmit_write_en(transmit_write_en),
         .transmit_write_line(register_write_line),
         .txd(txd),
-        .tbr(tbr)
+        .tbr(tbr),
     );
 
     receive receive0
@@ -59,8 +60,9 @@ module spart(
         .rxd(rxd),
         .receive_baud(receive_baud),
         .receive_read_en(receive_read_en),
+        .receive_start(receive_start),
         .rda(rda),
-        .receive_read_line(receive_read_line)
+        .receive_read_line(receive_read_line),
     );
 
     baud_generator baud_generator0
@@ -71,7 +73,8 @@ module spart(
         .baud_write_location(baud_write_location),
         .baud_generator_write_line(register_write_line),
         .transmit_baud(transmit_baud),
-        .receive_baud(receive_baud)
+        .receive_start(receive_start),
+        .receive_baud(receive_baud),
     );
 
     bus_interface bus_interface0
@@ -87,7 +90,7 @@ module spart(
         .transmit_write_en(transmit_write_en),
         .baud_write_en(baud_write_en),
         .baud_write_location(baud_write_location),
-        .databus(databus)
+        .databus(databus),
     );
 
 
