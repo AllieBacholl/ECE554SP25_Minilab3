@@ -1,0 +1,15 @@
+driver: This module sends the commands to configure the baud rate of the SPART based on the baud rate configuration switches on the FPGA board. Additionally, this module initiates transmit and receive commands to the SPART based on the rda and tbr signals.
+
+spart: This is the wrapper module for transmit, receive, baud_generator, and bus_interface.
+
+bus_interface: This module takes in the controls issued by the driver and initiates the change in baud rate commands to the baud_generator, the read received data to the receive module, and the transmit data command to the transmit module. This module will also send the data for the status register read.
+
+baud_generator: This module calculates when values need to be shifted in and out for the receive and transmit modules based on the configured baud rate.
+
+transmit: Transmits the given data out on GPIO3 using a shift register and the baud rate from the baud_generator. Includes a 0 start bit so that the receiver knows when a transmission starts since the line is typically held high.
+
+receive: Samples the values on GPIO5 until it finds a 0 start bit. Shifts the rest of the values into a shift register and sets rda high once the 8 bits have been transmitted.
+
+Minilab3: The top level module that connects spart to driver.
+
+Minilab3_tb: Using a spart to mimic the computer and an instantiated Minilab3 DUT, the test bench tests multiple transmitted values and all four baud rates and ensures the received values match what was sent.
