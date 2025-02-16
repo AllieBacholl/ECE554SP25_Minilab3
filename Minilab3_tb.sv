@@ -229,6 +229,7 @@ initial begin
    // Baud rate set tp 9600 bps at 50 MHz
    @(posedge CLOCK_50)
    sw = {2'b01, 8'b0};
+   @(posedge CLOCK_50)
    iorw = 1'b0;
    ioaddr = 2'b10;
    iocs = 1'b1;
@@ -394,7 +395,8 @@ initial begin
 
    // Baud rate set tp 19200 bps at 50 MHz
    @(posedge CLOCK_50)
-   sw = {2'b01, 8'b0};
+   sw = {2'b10, 8'b0};
+   @(posedge CLOCK_50)
    iorw = 1'b0;
    ioaddr = 2'b10;
    iocs = 1'b1;
@@ -560,7 +562,8 @@ initial begin
 
    // Baud rate set tp 38400 bps at 50 MHz
    @(posedge CLOCK_50)
-   sw = {2'b01, 8'b0};
+   sw = {2'b11, 8'b0};
+   @(posedge CLOCK_50)
    iorw = 1'b0;
    ioaddr = 2'b10;
    iocs = 1'b1;
