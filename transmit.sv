@@ -4,6 +4,7 @@ module transmit (
    input logic          transmit_baud,
    input logic          transmit_write_en,
    input logic    [7:0] transmit_write_line,
+   output logic         transmit_start,
    output logic         txd,
    output logic         tbr
    );
@@ -18,6 +19,8 @@ module transmit (
 
     logic [1:0] sel;
     assign sel = {init, shift};
+
+    logic transmit_start;
 
     typedef enum reg {IDLE, TRANSMITTING} state_t;
     state_t state,nxt_state;
@@ -62,6 +65,7 @@ module transmit (
             // Transmission initiated
             IDLE: if (transmit_write_en) begin
                 init = 1'b1;
+                transmit_start = 1'b1;
                 nxt_state = TRANSMITTING;
             end
             

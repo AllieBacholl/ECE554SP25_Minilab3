@@ -37,6 +37,7 @@ module spart(
     logic       baud_write_location;
     logic       transmit_baud;
     logic       receive_baud;
+    logic       transmit_start;
     logic       receive_start;
     logic [7:0] register_write_line;
     logic [7:0] receive_read_line;
@@ -49,6 +50,7 @@ module spart(
         .transmit_baud(transmit_baud),
         .transmit_write_en(transmit_write_en),
         .transmit_write_line(register_write_line),
+        .transmit_start(transmit_start),
         .txd(txd),
         .tbr(tbr)
     );
@@ -73,6 +75,7 @@ module spart(
         .baud_write_location(baud_write_location),
         .baud_generator_write_line(register_write_line),
         .transmit_baud(transmit_baud),
+        .transmit_start(transmit_start),
         .receive_start(receive_start),
         .receive_baud(receive_baud)
     );

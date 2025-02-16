@@ -4,6 +4,7 @@ module baud_generator(
     input       baud_write_en,
     input       baud_write_location,
     input [7:0] baud_generator_write_line,
+    input       transmit_start,
     input       receive_start,
     output reg  transmit_baud,
     output reg  receive_baud
@@ -37,7 +38,10 @@ always_ff @(posedge clk, negedge rst_n) begin
         end
         // Calculate enable signals
         else begin
-            if (down_cnt_transmit == 16'h0000) begin
+            if (transmit_start) begin
+                down_cnt_transmit <= db;
+                transmit_baud <= 1'b0;
+            end else if (down_cnt_transmit == 16'h0000) begin
                 down_cnt_transmit <= db;
                 transmit_baud <= 1'b1;
             end else begin
@@ -46,7 +50,7 @@ always_ff @(posedge clk, negedge rst_n) begin
             end
 
             if (receive_start) begin
-                down_cnt_receive <= db[15:1];
+                down_cnt_receive <= {1'b0, db[15:1]};
                 receive_baud <= 1'b0;
             end else if (down_cnt_receive == 16'h0000) begin
                 down_cnt_receive <= db;

@@ -297,3 +297,303 @@ run -all
 # Compile of spart.sv was successful.
 # Compile of transmit.sv was successful.
 # 8 compiles, 1 failed with 1 error.
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+run -all
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Failed: databus should be 0xb4 but is 0xda
+# 
+# Test 2: try sending 0xff and check for loopback from DUT at a baud rate of 4800
+# Test 2 Passed
+# 
+# Test 3: try sending 0x01 and check for loopback from DUT at a baud rate of 4800
+# Test 3 Failed: databus should be 0x01 but is 0x80
+# 
+# Test 4: try sending 0x00 and check for loopback from DUT at a baud rate of 4800
+# Test 4 Failed: databus should be 0x00 but is 0x80
+# 
+# Test 5: try sending 0xbf and check for loopback from DUT at a baud rate of 9600
+# Test 5 Passed
+# 
+# Test 6: try sending 0xff and check for loopback from DUT at a baud rate of 9600
+# Test 6 Passed
+# 
+# Test 7: try sending 0x01 and check for loopback from DUT at a baud rate of 9600
+# Test 7 Failed: databus should be 0x01 but is 0x88
+# 
+# Test 8: try sending 0x00 and check for loopback from DUT at a baud rate of 9600
+# Test 8 Failed: databus should be 0x00 but is 0x88
+# 
+# Test 9: try sending 0xbf and check for loopback from DUT at a baud rate of 19200
+# Test 9 Passed
+# 
+# Test 10: try sending 0xff and check for loopback from DUT at a baud rate of 19200
+# Test 10 Passed
+# 
+# Test 11: try sending 0x01 and check for loopback from DUT at a baud rate of 19200
+# Test 11 Passed
+# 
+# Test 12: try sending 0x00 and check for loopback from DUT at a baud rate of 19200
+# Test 12 Failed: databus should be 0x00 but is 0x40
+# 
+# Test 13: try sending 0xbf and check for loopback from DUT at a baud rate of 38400
+# Test 13 Failed: databus should be 0xbf but is 0xdf
+# 
+# Test 14: try sending 0xff and check for loopback from DUT at a baud rate of 38400
+# Test 14 Passed
+# 
+# Test 15: try sending 0x01 and check for loopback from DUT at a baud rate of 38400
+# Test 15 Failed: databus should be 0x01 but is 0x21
+# 
+# Test 16: try sending 0x00 and check for loopback from DUT at a baud rate of 38400
+# Test 16 Failed: databus should be 0x00 but is 0x40
+# 
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(717)
+#    Time: 1459605 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 717
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Failed: databus should be 0xb4 but is 0xda
+# 
+# Test 2: try sending 0xff and check for loopback from DUT at a baud rate of 4800
+# Test 2 Passed
+# 
+# Test 3: try sending 0x01 and check for loopback from DUT at a baud rate of 4800
+# Test 3 Failed: databus should be 0x01 but is 0x80
+# 
+# Test 4: try sending 0x00 and check for loopback from DUT at a baud rate of 4800
+# Test 4 Failed: databus should be 0x00 but is 0x80
+# 
+# Test 5: try sending 0xbf and check for loopback from DUT at a baud rate of 9600
+# Test 5 Passed
+# 
+# Test 6: try sending 0xff and check for loopback from DUT at a baud rate of 9600
+# Test 6 Passed
+# 
+# Test 7: try sending 0x01 and check for loopback from DUT at a baud rate of 9600
+# Test 7 Failed: databus should be 0x01 but is 0x88
+# 
+# Test 8: try sending 0x00 and check for loopback from DUT at a baud rate of 9600
+# Test 8 Failed: databus should be 0x00 but is 0x88
+# 
+# Test 9: try sending 0xbf and check for loopback from DUT at a baud rate of 19200
+# Test 9 Passed
+# 
+# Test 10: try sending 0xff and check for loopback from DUT at a baud rate of 19200
+# Test 10 Passed
+# 
+# Test 11: try sending 0x01 and check for loopback from DUT at a baud rate of 19200
+# Test 11 Passed
+# 
+# Test 12: try sending 0x00 and check for loopback from DUT at a baud rate of 19200
+# Test 12 Failed: databus should be 0x00 but is 0x40
+# 
+# Test 13: try sending 0xbf and check for loopback from DUT at a baud rate of 38400
+# Test 13 Failed: databus should be 0xbf but is 0xdf
+# 
+# Test 14: try sending 0xff and check for loopback from DUT at a baud rate of 38400
+# Test 14 Passed
+# 
+# Test 15: try sending 0x01 and check for loopback from DUT at a baud rate of 38400
+# Test 15 Failed: databus should be 0x01 but is 0x21
+# 
+# Test 16: try sending 0x00 and check for loopback from DUT at a baud rate of 38400
+# Test 16 Failed: databus should be 0x00 but is 0x40
+# 
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(717)
+#    Time: 1459605 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 717
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Failed: databus should be 0xb4 but is 0xf6
+# 
+# Test 2: try sending 0xff and check for loopback from DUT at a baud rate of 4800
+# Test 2 Passed
+# 
+# Test 3: try sending 0x01 and check for loopback from DUT at a baud rate of 4800
+# Test 3 Failed: databus should be 0x01 but is 0xe0
+# 
+# Test 4: try sending 0x00 and check for loopback from DUT at a baud rate of 4800
+# Test 4 Failed: databus should be 0x00 but is 0xe0
+# 
+# Test 5: try sending 0xbf and check for loopback from DUT at a baud rate of 9600
+# Test 5 Failed: databus should be 0xbf but is 0xff
+# 
+# Test 6: try sending 0xff and check for loopback from DUT at a baud rate of 9600
+# Test 6 Passed
+# 
+# Test 7: try sending 0x01 and check for loopback from DUT at a baud rate of 9600
+# Test 7 Failed: databus should be 0x01 but is 0xc4
+# 
+# Test 8: try sending 0x00 and check for loopback from DUT at a baud rate of 9600
+# Test 8 Failed: databus should be 0x00 but is 0xe4
+# 
+# Test 9: try sending 0xbf and check for loopback from DUT at a baud rate of 19200
+# Test 9 Failed: databus should be 0xbf but is 0xff
+# 
+# Test 10: try sending 0xff and check for loopback from DUT at a baud rate of 19200
+# Test 10 Passed
+# 
+# Test 11: try sending 0x01 and check for loopback from DUT at a baud rate of 19200
+# Test 11 Failed: databus should be 0x01 but is 0xe1
+# 
+# Test 12: try sending 0x00 and check for loopback from DUT at a baud rate of 19200
+# Test 12 Failed: databus should be 0x00 but is 0xe1
+# 
+# Test 13: try sending 0xbf and check for loopback from DUT at a baud rate of 38400
+# Test 13 Failed: databus should be 0xbf but is 0xef
+# 
+# Test 14: try sending 0xff and check for loopback from DUT at a baud rate of 38400
+# Test 14 Passed
+# 
+# Test 15: try sending 0x01 and check for loopback from DUT at a baud rate of 38400
+# Test 15 Failed: databus should be 0x01 but is 0xd1
+# 
+# Test 16: try sending 0x00 and check for loopback from DUT at a baud rate of 38400
+# Test 16 Failed: databus should be 0x00 but is 0xd1
+# 
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(717)
+#    Time: 1612605 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 717
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+run -all
+# Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
+# Test 1 Failed: databus should be 0xb4 but is 0x68
+# 
+# Test 2: try sending 0xff and check for loopback from DUT at a baud rate of 4800
+# Test 2 Failed: databus should be 0xff but is 0xfe
+# 
+# Test 3: try sending 0x01 and check for loopback from DUT at a baud rate of 4800
+# Test 3 Failed: databus should be 0x01 but is 0x02
+# 
+# Test 4: try sending 0x00 and check for loopback from DUT at a baud rate of 4800
+# Test 4 Failed: databus should be 0x00 but is 0xfe
+# 
+# Test 5: try sending 0xbf and check for loopback from DUT at a baud rate of 9600
+# Test 5 Failed: databus should be 0xbf but is 0xff
+# 
+# Test 6: try sending 0xff and check for loopback from DUT at a baud rate of 9600
+# Test 6 Failed: databus should be 0xff but is 0xfe
+# 
+# Test 7: try sending 0x01 and check for loopback from DUT at a baud rate of 9600
+# Test 7 Failed: databus should be 0x01 but is 0x11
+# 
+# Test 8: try sending 0x00 and check for loopback from DUT at a baud rate of 9600
+# Test 8 Failed: databus should be 0x00 but is 0x0e
+# 
+# Test 9: try sending 0xbf and check for loopback from DUT at a baud rate of 19200
+# Test 9 Failed: databus should be 0xbf but is 0xfc
+# 
+# Test 10: try sending 0xff and check for loopback from DUT at a baud rate of 19200
+# Test 10 Failed: databus should be 0xff but is 0xfe
+# 
+# Test 11: try sending 0x01 and check for loopback from DUT at a baud rate of 19200
+# Test 11 Passed
+# 
+# Test 12: try sending 0x00 and check for loopback from DUT at a baud rate of 19200
+# Test 12 Failed: databus should be 0x00 but is 0x12
+# 
+# Test 13: try sending 0xbf and check for loopback from DUT at a baud rate of 38400
+# Test 13 Failed: databus should be 0xbf but is 0xfc
+# 
+# Test 14: try sending 0xff and check for loopback from DUT at a baud rate of 38400
+# Test 14 Failed: databus should be 0xff but is 0xfe
+# 
+# Test 15: try sending 0x01 and check for loopback from DUT at a baud rate of 38400
+# Test 15 Failed: databus should be 0x01 but is 0x22
+# 
+# Test 16: try sending 0x00 and check for loopback from DUT at a baud rate of 38400
+# Test 16 Failed: databus should be 0x00 but is 0xfe
+# 
+# End of tests
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(717)
+#    Time: 1188075 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 717
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.Minilab3_tb(fast)
+# Loading work.spart(fast)
+# Loading work.driver(fast)
+vsim work.Minilab3_tb -voptargs=+acc
+# End time: 15:49:35 on Feb 16,2025, Elapsed time: 1:39:35
+# Errors: 0, Warnings: 1
+# vsim work.Minilab3_tb -voptargs="+acc" 
+# Start time: 15:49:35 on Feb 16,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.Minilab3_tb(fast)
+# Loading work.Minilab3(fast)
+# Loading work.spart(fast)
+# Loading work.transmit(fast)
+# Loading work.receive(fast)
+# Loading work.baud_generator(fast)
+# Loading work.bus_interface(fast)
+# Loading work.driver(fast)
