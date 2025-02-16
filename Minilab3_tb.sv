@@ -17,15 +17,31 @@ wire [7:0] databus;
 
 logic all_tests_passed;
 
+logic [15:0] baud_rate;
+
 logic [7:0] data_write;
 assign databus = iocs ? (iorw ? 8'bz : data_write) : 8'bz;
 
+// Set baud rate based on switch position
+always_comb begin
+   if (sw[9:8] == 2'b00)
+      baud_rate = 651;
+   else if (sw[9:8] == 2'b01)
+      baud_rate = 326;
+   else if (sw[9:8] == 2'b10)
+      baud_rate = 163;
+   else 
+      baud_rate = 81;
+end
+
+// Instantiate both the paired spart and controller and our standalone spart
 Minilab3 DUT (.CLOCK2_50(CLOCK2_50), .CLOCK3_50(CLOCK3_50), .CLOCK4_50(CLOCK4_50), .CLOCK_50(CLOCK_50), .HEX0(hex0), 
                     .HEX1(hex1), .HEX2(hex2), .HEX3(hex3), .HEX4(hex4), .HEX5(hex5), .LEDR(ledr), .KEY(key), .SW(sw), .GPIO(gpio));
 
 spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(ioaddr), .databus(databus), .txd(gpio[5]), .rxd(gpio[3]));
 
- initial begin 
+// Run tests at all 4 baud rates
+initial begin 
 
    CLOCK3_50 = 0;
    CLOCK4_50 = 0;
@@ -50,11 +66,11 @@ spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rd
    iorw = 1'b0;
    ioaddr = 2'b10;
    iocs = 1'b1;
-   data_write = 8'h8b;
+   data_write = baud_rate[7:0];
    @(posedge CLOCK_50);
 
    ioaddr = 2'b11;
-   data_write = 8'h02;
+   data_write = baud_rate[15:8];
    @(posedge CLOCK_50);
    iocs = 0;
 
@@ -216,11 +232,11 @@ spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rd
    iorw = 1'b0;
    ioaddr = 2'b10;
    iocs = 1'b1;
-   data_write = 8'h8b;
+   data_write = baud_rate[7:0];
    @(posedge CLOCK_50);
 
    ioaddr = 2'b11;
-   data_write = 8'h02;
+   data_write = baud_rate[15:8];
    @(posedge CLOCK_50);
    iocs = 0;
 
@@ -378,15 +394,15 @@ spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rd
 
    // Baud rate set tp 19200 bps at 50 MHz
    @(posedge CLOCK_50)
-   sw = {2'b10, 8'b0};
+   sw = {2'b01, 8'b0};
    iorw = 1'b0;
    ioaddr = 2'b10;
    iocs = 1'b1;
-   data_write = 8'h8b;
+   data_write = baud_rate[7:0];
    @(posedge CLOCK_50);
 
    ioaddr = 2'b11;
-   data_write = 8'h02;
+   data_write = baud_rate[15:8];
    @(posedge CLOCK_50);
    iocs = 0;
 
@@ -544,15 +560,15 @@ spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rd
 
    // Baud rate set tp 38400 bps at 50 MHz
    @(posedge CLOCK_50)
-   sw = {2'b11, 8'b0};
+   sw = {2'b01, 8'b0};
    iorw = 1'b0;
    ioaddr = 2'b10;
    iocs = 1'b1;
-   data_write = 8'h8b;
+   data_write = baud_rate[7:0];
    @(posedge CLOCK_50);
 
    ioaddr = 2'b11;
-   data_write = 8'h02;
+   data_write = baud_rate[15:8];
    @(posedge CLOCK_50);
    iocs = 0;
 
