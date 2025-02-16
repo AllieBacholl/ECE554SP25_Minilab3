@@ -46,7 +46,7 @@ always_ff @(posedge clk, negedge rst_n) begin
             end
 
             if (receive_start) begin
-                down_cnt_receive <= db[15:1]
+                down_cnt_receive <= db[15:1];
                 receive_baud <= 1'b0;
             end else if (down_cnt_receive == 16'h0000) begin
                 down_cnt_receive <= db;

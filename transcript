@@ -279,3 +279,21 @@ run -all
 # ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv(717)
 #    Time: 1497365 ps  Iteration: 2  Instance: /Minilab3_tb
 # Break at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv line 717
+# Compile of baud_generator.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv failed with 1 errors.
+# Compile of spart.sv failed with 4 errors.
+# Compile of transmit.sv was successful.
+# 8 compiles, 3 failed with 6 errors.
+# Compile of baud_generator.sv failed with 1 errors.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv was successful.
+# 8 compiles, 1 failed with 1 error.
