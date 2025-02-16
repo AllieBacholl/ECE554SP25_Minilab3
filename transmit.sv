@@ -58,6 +58,7 @@ module transmit (
         init = 1'b0;
         set_done = 1'b0;
         nxt_state = state;
+        transmit_start = 1'b0;
 
         case (state)
             // Transmission initiated

@@ -1,48 +1,52 @@
 m255
 K4
 z2
-!s12c _opt1
-Z0 !s99 nomlopt
-Z1 !s12c _opt
+Z0 !s12c _opt1
+Z1 !s99 nomlopt
 R0
 R1
 R0
 R1
-R0
+Z2 !s12c _opt
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
 R1
-R0
+R2
+R1
+R2
+R1
+R2
+R1
 !s11f vlog 2023.3 2023.07, Jul 17 2023
 13
 !s112 1.1
@@ -50,99 +54,98 @@ R0
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dC:/intelFPGA_lite/23.1std
+Z3 dC:/intelFPGA_lite/23.1std
 T_opt
 !s110 1739741882
 VUIY:Vk39n>V_z=JXQQ4Ko3
-Z3 04 11 4 work Minilab3_tb fast 0
+Z4 04 11 4 work Minilab3_tb fast 0
 =12-4cd71794e1fa-67b25ab9-243-3320
-R0
-Z4 !s12b OEM100
-Z5 !s124 OEM10U13 
+R1
+Z5 !s12b OEM100
+Z6 !s124 OEM10U13 
 o-quiet -auto_acc_if_foreign -work work
-Z6 tCvgOpt 0
+Z7 tCvgOpt 0
 n@_opt
-Z7 OL;O;2023.3;77
-R2
-T_opt1
-!s110 1739742578
-V^BIz;VAl00>mf1Q1PKBeV1
+Z8 OL;O;2023.3;77
 R3
-=1-4cd71794e1fa-67b25d71-272-3f20
-R0
+T_opt1
+!s110 1739743030
+V>AMQe@GhIj:C7EXLMMZZ51
 R4
+=3-4cd71794e1fa-67b25f35-10d-3f20
+R1
 R5
-o-quiet -auto_acc_if_foreign -work work +acc
 R6
-n@_opt1
+o-quiet -auto_acc_if_foreign -work work +acc
 R7
-R2
+n@_opt1
+R8
 vbaud_generator
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/baud_generator.sv
-Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1739742870
+Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1739743007
 !i10b 1
 !s100 TN=bMEAUPN@HbDk6=CCc^1
 I[_FB6fg=0`J7OFD;_>M:B3
 S1
-Z9 dI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3
+Z10 dI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3
 w1739742745
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/baud_generator.sv
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/baud_generator.sv
-!i122 187
+!i122 202
 L0 1 67
-Z10 VDg1SIo80bB@j0V0VzS_@n1
-Z11 OL;L;2023.3;77
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2023.3;77
 r1
 !s85 0
 31
-!s108 1739742870.000000
+!s108 1739743007.000000
 !s107 I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/baud_generator.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/baud_generator.sv|
 !i113 0
-Z12 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R6
+Z13 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
 vbus_interface
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/bus_interface.sv
-R8
-Z13 !s110 1739742871
+R9
+Z14 !s110 1739743008
 !i10b 1
 !s100 d:5So>mIQjMV9X5hXf52>1
 IaQP4OO8fZdD[Of_a:o13m1
 S1
-R9
-Z14 w1739733575
+R10
+w1739733575
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/bus_interface.sv
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/bus_interface.sv
-!i122 188
+!i122 203
 L0 1 60
-R10
 R11
+R12
 r1
 !s85 0
 31
-Z15 !s108 1739742871.000000
+Z15 !s108 1739743008.000000
 !s107 I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/bus_interface.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/bus_interface.sv|
 !i113 0
-R12
-R6
+R13
+R7
 vdriver
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/driver.sv
-R8
-R13
+R9
+R14
 !i10b 1
 !s100 V=bFd76G6DDBXVNO[`A?b1
 IhBFYFlR9[5PnT0BNeWcdM0
 S1
-R9
+R10
 w1739734919
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/driver.sv
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/driver.sv
-!i122 189
+!i122 204
 L0 20 102
-R10
 R11
+R12
 r1
 !s85 0
 31
@@ -150,22 +153,22 @@ R15
 !s107 I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/driver.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/driver.sv|
 !i113 0
-R12
-R6
+R13
+R7
 vMinilab3
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3.v
-Z16 !s110 1739742872
+Z16 !s110 1739743009
 !i10b 1
 !s100 MNM6koQMSa6UEMkH7g1^M0
 IoZ7odCl9iN3g@F^?f`zeM1
-R9
+R10
 w1739733574
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3.v
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3.v
-!i122 190
+!i122 205
 L0 6 133
-R10
 R11
+R12
 r1
 !s85 0
 31
@@ -174,50 +177,50 @@ R15
 !s90 -reportprogress|300|-work|work|-vopt|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3.v|
 !i113 0
 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R6
+R7
 n@minilab3
 vMinilab3_tb
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv
-R8
+R9
 R16
 !i10b 1
 !s100 >RGkgHmoMfPY[I@a9^eX=2
 ITeg8efR<b`<jhTL]hAhDR3
 S1
-R9
+R10
 w1739738028
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv
-!i122 191
+!i122 206
 L0 3 727
-R10
 R11
+R12
 r1
 !s85 0
 31
-Z17 !s108 1739742872.000000
+Z17 !s108 1739743009.000000
 !s107 I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/Minilab3_tb.sv|
 !i113 0
-R12
-R6
+R13
+R7
 n@minilab3_tb
 vreceive
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/receive.sv
-R8
-Z18 !s110 1739742873
+R9
+R16
 !i10b 1
 !s100 FjMzYO75^cLdM`6AN:Uj>2
 I^;ofd@]]21g^b1Q4kU1Qg2
 S1
-R9
+R10
 w1739741866
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/receive.sv
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/receive.sv
-!i122 192
+!i122 207
 L0 1 108
-R10
 R11
+R12
 r1
 !s85 0
 31
@@ -225,55 +228,55 @@ R17
 !s107 I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/receive.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/receive.sv|
 !i113 0
-R12
-R6
+R13
+R7
 vspart
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/spart.sv
-R8
-R18
+R9
+Z18 !s110 1739743010
 !i10b 1
 !s100 EP0AYzWJDfngMl;?6A2BC1
 IUWnLVlj72ak9H31c]J1n81
 S1
-R9
+R10
 w1739742830
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/spart.sv
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/spart.sv
-!i122 193
+!i122 208
 L0 20 81
-R10
 R11
+R12
 r1
 !s85 0
 31
-!s108 1739742873.000000
+Z19 !s108 1739743010.000000
 !s107 I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/spart.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/spart.sv|
 !i113 0
-R12
-R6
+R13
+R7
 vtransmit
 2I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/transmit.sv
-R8
-!s110 1739741874
-!i10b 1
-!s100 dzc@^<@5A=<CiA`N5GF0m0
-IEc0;8^ibN>89deUfc0lnC0
-S1
 R9
-R14
+R18
+!i10b 1
+!s100 f^kB88WeWZE>;iQ9ElmSP1
+ISPXHN;eCCe5d:DYK72=iY0
+S1
+R10
+w1739743002
 8I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/transmit.sv
 FI:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/transmit.sv
-!i122 186
-L0 1 90
-R10
+!i122 209
+L0 1 93
 R11
+R12
 r1
 !s85 0
 31
-!s108 1739741874.000000
+R19
 !s107 I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/transmit.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/Minilab3/transmit.sv|
 !i113 0
-R12
-R6
+R13
+R7
