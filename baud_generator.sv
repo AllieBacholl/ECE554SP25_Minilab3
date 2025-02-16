@@ -28,10 +28,12 @@ always_ff@ (posedge clk, negedge rst_n) begin
         // Set DB(Low)
         if (baud_write_en && !baud_write_location) begin
             db[7:0] <= baud_generator_write_line;
+            down_cnt <= db;
         end
         // Set DB(High)
         else if (baud_write_en && baud_write_location) begin
             db[15:8] <= baud_generator_write_line;
+            down_cnt <= db;
         end
         // Calculate enable signals
         else begin

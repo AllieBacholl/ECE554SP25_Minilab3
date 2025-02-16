@@ -28,7 +28,8 @@ module transmit (
     // Shift Counter //
     always_ff @(posedge clk)
         case(sel)
-            2'b1?: bit_cnt <= 4'h0;
+            2'b11: bit_cnt <= 4'h0;
+            2'b10: bit_cnt <= 4'h0;
             2'b01: bit_cnt <= bit_cnt + 1'b1; 
         endcase
 
@@ -38,7 +39,8 @@ module transmit (
             tx_shft_reg <= 9'h1FF;
         else begin
             case(sel)
-                2'b1?: tx_shft_reg <= {transmit_write_line, 1'b0};
+                2'b11: tx_shft_reg <= {transmit_write_line, 1'b0};
+                2'b10: tx_shft_reg <= {transmit_write_line, 1'b0};
                 2'b01: tx_shft_reg <= {1'b1, tx_shft_reg[8:1]}; 
             endcase
         end

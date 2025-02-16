@@ -34,7 +34,7 @@ module driver(
             logic   [7:0]   write_data;
             logic   [7:0]   read_data, read_data_next;
             logic   [15:0]  baud_rate;
-    enum    logic   [2:0]   {START_WAIT1, START1, START_WAIT2, START2, WAIT, RECEIVE, TRANSMIT_WAIT, TRANSMIT} state, next_state;
+    enum    logic   [2:0]   {START1, START2, WAIT, RECEIVE, TRANSMIT_WAIT, TRANSMIT} state, next_state;
 
     // Logic for handling ownership of the databus signal
     assign databus = iocs ? (iorw ? 7'bz : write_data) : 7'bz;
@@ -54,11 +54,11 @@ module driver(
     // State machine flip flop
     always_ff @(posedge clk, negedge rst_n) begin
         if (!rst_n) begin
-            state = START_WAIT1;
+            state = START1;
             br_cfg_ff = br_cfg;
         end
         else if (br_cfg != br_cfg_ff) begin
-            state = START_WAIT1;
+            state = START1;
             br_cfg_ff = br_cfg;
         end
         else begin
@@ -77,22 +77,12 @@ module driver(
         ioaddr = 2'b00;
         iocs = 0;
         case(state)
-            START_WAIT1: begin
-                iocs = 0;
-                if (tbr)
-                    next_state = START1;
-            end
             START1: begin
                 iocs = 1;
                 iorw = 0;
                 ioaddr = 2'b10;
                 write_data = baud_rate[7:0];
-                next_state = START_WAIT2;
-            end
-            START_WAIT2: begin
-                iocs = 0;
-                if (tbr)
-                    next_state = START2;
+                next_state = START2;
             end
             START2: begin
                 iocs = 1;

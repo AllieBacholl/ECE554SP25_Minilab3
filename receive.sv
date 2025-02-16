@@ -32,7 +32,8 @@ module receive (
     //  Shift Counter   //
     always_ff @(posedge clk)
         case(sel)
-            2'b1?: bit_cnt <= 4'h0;
+            2'b11: bit_cnt <= 4'h0;
+            2'b10: bit_cnt <= 4'h0;
             2'b01: bit_cnt <= bit_cnt + 1'b1; 
         endcase
 
