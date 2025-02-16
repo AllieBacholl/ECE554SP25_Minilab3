@@ -597,3 +597,12 @@ vsim work.Minilab3_tb -voptargs=+acc
 # Loading work.baud_generator(fast)
 # Loading work.bus_interface(fast)
 # Loading work.driver(fast)
+# Compile of baud_generator.sv was successful.
+# Compile of bus_interface.sv was successful.
+# Compile of driver.sv was successful.
+# Compile of Minilab3.v was successful.
+# Compile of Minilab3_tb.sv was successful.
+# Compile of receive.sv was successful.
+# Compile of spart.sv was successful.
+# Compile of transmit.sv failed with 1 errors.
+# 8 compiles, 1 failed with 1 error.
