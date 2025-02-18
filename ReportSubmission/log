@@ -1,22 +1,3 @@
-couldn't open "transcript": permission denied
-# //  Questa Intel Starter FPGA Edition-64
-# //  Version 2023.3 win64 Jul 17 2023
-# //
-# //  Copyright 1991-2023 Mentor Graphics Corporation
-# //  All Rights Reserved.
-# //
-# //  QuestaSim and its associated documentation contain trade
-# //  secrets and commercial or financial information that are the property of
-# //  Mentor Graphics Corporation and are privileged, confidential,
-# //  and exempt from disclosure under the Freedom of Information Act,
-# //  5 U.S.C. Section 552. Furthermore, this information
-# //  is prohibited from disclosure under the Trade Secrets Act,
-# //  18 U.S.C. Section 1905.
-# //
-# Loading project Minilab3
-# 0 compiles, 8 failed with no errors.
-# reading C:/intelFPGA_lite/23.1std/questa_fse/win64/../modelsim.ini
-# Loading project Minilab3
 # Compile of baud_generator.sv was successful.
 # Compile of bus_interface.sv was successful.
 # Compile of driver.sv was successful.
@@ -28,15 +9,11 @@ couldn't open "transcript": permission denied
 # 8 compiles, 0 failed with no errors.
 vsim work.Minilab3_tb -voptargs=+acc
 # vsim work.Minilab3_tb -voptargs="+acc" 
-# Start time: 17:45:36 on Feb 16,2025
-# ** Error: (vsim-7) Failed to open  file "I:/ECE554SP25_Minilab3/work/@_opt1/_deps" in read mode.
-# No such file or directory. (errno = ENOENT)
-# ** Warning: (vsim-56) Problem with optimized design dependency file "I:/ECE554SP25_Minilab3/work/@_opt1/_deps" - file open failed.
-# No such file or directory. (errno = ENOENT)
+# Start time: 17:13:21 on Feb 18,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vopt-143) Recognized 1 FSM in module "driver(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=2.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.Minilab3_tb(fast)
 # Loading work.Minilab3(fast)
@@ -46,12 +23,32 @@ vsim work.Minilab3_tb -voptargs=+acc
 # Loading work.baud_generator(fast)
 # Loading work.bus_interface(fast)
 # Loading work.driver(fast)
-add wave -position insertpoint sim:/Minilab3_tb/*
+add wave -position insertpoint  \
+sim:/Minilab3_tb/iSPART/clk \
+sim:/Minilab3_tb/iSPART/rst_n \
+sim:/Minilab3_tb/iSPART/iocs \
+sim:/Minilab3_tb/iSPART/iorw \
+sim:/Minilab3_tb/iSPART/rda \
+sim:/Minilab3_tb/iSPART/tbr \
+sim:/Minilab3_tb/iSPART/ioaddr \
+sim:/Minilab3_tb/iSPART/databus \
+sim:/Minilab3_tb/iSPART/txd \
+sim:/Minilab3_tb/iSPART/rxd \
+sim:/Minilab3_tb/iSPART/transmit_write_en \
+sim:/Minilab3_tb/iSPART/receive_read_en \
+sim:/Minilab3_tb/iSPART/baud_write_en \
+sim:/Minilab3_tb/iSPART/baud_write_location \
+sim:/Minilab3_tb/iSPART/transmit_baud \
+sim:/Minilab3_tb/iSPART/receive_baud \
+sim:/Minilab3_tb/iSPART/transmit_start \
+sim:/Minilab3_tb/iSPART/receive_start \
+sim:/Minilab3_tb/iSPART/register_write_line \
+sim:/Minilab3_tb/iSPART/receive_read_line
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jneau  Hostname: WIN-8113  ProcessID: 16160
-#           Attempting to use alternate WLF file "./wlftgrh3r8".
+#           Attempting to use alternate WLF file "./wlftf8bns3".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftgrh3r8
+#           Using alternate file: ./wlftf8bns3
 run -all
 # Test 1: try sending 0xb4 and check for loopback from DUT at a baud rate of 4800
 # Test 1 Passed
@@ -102,6 +99,6 @@ run -all
 # Test 16 Passed
 # 
 # YAHOO!!! All tests passed!
-# ** Note: $stop    : I:/ECE554SP25_Minilab3/Minilab3_tb.sv(736)
-#    Time: 934115 ps  Iteration: 2  Instance: /Minilab3_tb
-# Break in Module Minilab3_tb at I:/ECE554SP25_Minilab3/Minilab3_tb.sv line 736
+# ** Note: $stop    : I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/ECE554SP25_Minilab3/Minilab3_tb.sv(736)
+#    Time: 14846675 ps  Iteration: 2  Instance: /Minilab3_tb
+# Break in Module Minilab3_tb at I:/ECE554/DE1-SoC_v.5.1.1_HWrevF_SystemCD/Tools/SystemBuilder/CodeGenerated/DE1_SOC/ECE554SP25_Minilab3/Minilab3_tb.sv line 736
