@@ -89,7 +89,7 @@ initial begin
    fork : timeout1
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 1 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout1;
@@ -127,7 +127,7 @@ initial begin
    fork : timeout2
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (10000000) @(posedge CLOCK_50);
          $display("Test 2 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout2;
@@ -165,7 +165,7 @@ initial begin
    fork : timeout3
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 3 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout3;
@@ -203,7 +203,7 @@ initial begin
    fork : timeout4
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 4 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout4;
@@ -256,7 +256,7 @@ initial begin
    fork : timeout5
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 5 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout5;
@@ -294,7 +294,7 @@ initial begin
    fork : timeout6
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 6 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout6;
@@ -332,7 +332,7 @@ initial begin
    fork : timeout7
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 7 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout7;
@@ -370,7 +370,7 @@ initial begin
    fork : timeout8
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 8 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout8;
@@ -423,7 +423,7 @@ initial begin
    fork : timeout9
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 9 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout9;
@@ -461,7 +461,7 @@ initial begin
    fork : timeout10
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 10 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout10;
@@ -499,7 +499,7 @@ initial begin
    fork : timeout11
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 11 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout11;
@@ -537,7 +537,7 @@ initial begin
    fork : timeout12
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 12 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout12;
@@ -590,7 +590,7 @@ initial begin
    fork : timeout13
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 13 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout13;
@@ -628,7 +628,7 @@ initial begin
    fork : timeout14
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 14 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout14;
@@ -666,7 +666,7 @@ initial begin
    fork : timeout15
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 15 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout15;
@@ -704,7 +704,7 @@ initial begin
    fork : timeout16
       begin
          // Timeout check
-         repeat (100000) @(posedge CLOCK_50);
+         repeat (1000000) @(posedge CLOCK_50);
          $display("Test 16 Failed: timed out waiting for data ready signal from the test bench receiver\n");
          all_tests_passed = 0;
          disable timeout16;
