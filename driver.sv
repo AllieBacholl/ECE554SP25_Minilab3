@@ -42,13 +42,13 @@ module driver(
     // Logic for determining the right baud rate
     always_comb begin
         if (br_cfg == 2'b00)
-            baud_rate = 16'd651;
+            baud_rate = 16'd10416;
         else if (br_cfg == 2'b01)
-            baud_rate = 16'd326;
+            baud_rate = 16'd5207;
         else if (br_cfg == 2'b10)
-            baud_rate = 16'd163;
+            baud_rate = 16'd2603;
         else 
-            baud_rate = 16'd81;
+            baud_rate = 16'd1301;
     end
 
     // State machine flip flop

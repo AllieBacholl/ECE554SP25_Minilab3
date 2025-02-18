@@ -25,13 +25,13 @@ assign databus = iocs ? (iorw ? 8'bz : data_write) : 8'bz;
 // Set baud rate based on switch position
 always_comb begin
    if (sw[9:8] == 2'b00)
-      baud_rate = 651;
+      baud_rate = 10416;
    else if (sw[9:8] == 2'b01)
-      baud_rate = 326;
+      baud_rate = 5207;
    else if (sw[9:8] == 2'b10)
-      baud_rate = 163;
+      baud_rate = 2603;
    else 
-      baud_rate = 81;
+      baud_rate = 1301;
 end
 
 // Instantiate both the paired spart and controller and our standalone spart

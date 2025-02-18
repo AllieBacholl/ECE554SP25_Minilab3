@@ -18,14 +18,14 @@ logic [15:0] down_cnt_receive;
 // divisor = (clock frequency/(2^n × baud rate) − 1)
 // Assume clock frequency is 50 MHz and n = 4
 // Supported baud rates are 4800, 9600, 19200, 38400
-// Divisor values are 651, 326, 163, 81
+// Divisor values are 10416, 5207, 2603, 1301
 
 always_ff @(posedge clk, negedge rst_n) begin
     if (!rst_n) begin
         transmit_baud <= 1'b0;
         down_cnt_transmit <= 16'h0000;
         // Default to 50 MHz at 9600 bps
-        db <= 16'd326;
+        db <= 16'd5207;
     end
     else begin
         // Set DB(Low)
