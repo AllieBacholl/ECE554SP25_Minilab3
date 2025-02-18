@@ -38,7 +38,7 @@ end
 Minilab3 DUT (.CLOCK2_50(CLOCK2_50), .CLOCK3_50(CLOCK3_50), .CLOCK4_50(CLOCK4_50), .CLOCK_50(CLOCK_50), .HEX0(hex0), 
                     .HEX1(hex1), .HEX2(hex2), .HEX3(hex3), .HEX4(hex4), .HEX5(hex5), .LEDR(ledr), .KEY(key), .SW(sw), .GPIO(gpio));
 
-spart iSPART (.clk(CLOCK_50), .rst_n(~key[0]), .iocs(iocs), .iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(ioaddr), .databus(databus), .txd(gpio[5]), .rxd(gpio[3]));
+spart iSPART (.clk(CLOCK_50), .rst_n(key[0]), .iocs(iocs), .iorw(iorw), .rda(rda), .tbr(tbr), .ioaddr(ioaddr), .databus(databus), .txd(gpio[5]), .rxd(gpio[3]));
 
 // Run tests at all 4 baud rates
 initial begin 
@@ -48,7 +48,7 @@ initial begin
    CLOCK2_50 = 0;
    CLOCK_50 = 0; 
 
-   key = 4'b0;
+   key = 4'b0001;
    sw = 10'b0;
    iorw = 1'b1;
    ioaddr = 2'b0;
@@ -58,9 +58,9 @@ initial begin
    all_tests_passed = 1;
 
    repeat (2) @(posedge CLOCK_50);
-   key[0] = 1;
-   repeat (4) @(posedge CLOCK_50);
    key[0] = 0;
+   repeat (4) @(posedge CLOCK_50);
+   key[0] = 1;
 
    // Baud rate set t0 4800 bps at 50 MHz
    iorw = 1'b0;

@@ -33,32 +33,29 @@ always_ff @(posedge clk, negedge rst_n) begin
             db[7:0] <= baud_generator_write_line;
         end
         // Set DB(High)
-        else if (baud_write_en && baud_write_location) begin
+        if (baud_write_en && baud_write_location) begin
             db[15:8] <= baud_generator_write_line;
         end
         // Calculate enable signals
-        else begin
-            if (transmit_start) begin
-                down_cnt_transmit <= db;
-                transmit_baud <= 1'b0;
-            end else if (down_cnt_transmit == 16'h0000) begin
-                down_cnt_transmit <= db;
-                transmit_baud <= 1'b1;
-            end else begin
-                down_cnt_transmit <= down_cnt_transmit - 1'b1;
-                transmit_baud <= 1'b0;
-            end
-
-            if (receive_start) begin
-                down_cnt_receive <= {1'b0, db[15:1]};
-                receive_baud <= 1'b0;
-            end else if (down_cnt_receive == 16'h0000) begin
-                down_cnt_receive <= db;
-                receive_baud <= 1'b1;
-            end else begin
-                down_cnt_receive <= down_cnt_receive - 1;
-                receive_baud <= 1'b0;
-            end
+        if (transmit_start) begin
+            down_cnt_transmit <= db;
+            transmit_baud <= 1'b0;
+        end else if (down_cnt_transmit == 16'h0000) begin
+            down_cnt_transmit <= db;
+            transmit_baud <= 1'b1;
+        end else begin
+            down_cnt_transmit <= down_cnt_transmit - 1'b1;
+            transmit_baud <= 1'b0;
+        end
+        if (receive_start) begin
+            down_cnt_receive <= {1'b0, db[15:1]};
+            receive_baud <= 1'b0;
+        end else if (down_cnt_receive == 16'h0000) begin
+            down_cnt_receive <= db;
+            receive_baud <= 1'b1;
+        end else begin
+            down_cnt_receive <= down_cnt_receive - 1;
+            receive_baud <= 1'b0;
         end
     end
 end

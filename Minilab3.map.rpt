@@ -1,0 +1,516 @@
+Analysis & Synthesis report for Minilab3
+Tue Feb 18 16:31:45 2025
+Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Minilab3|driver:driver0|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Feb 18 16:31:45 2025          ;
+; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
+; Revision Name                   ; Minilab3                                       ;
+; Top-level Entity Name           ; Minilab3                                       ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 100                                            ;
+; Total pins                      ; 106                                            ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; Minilab3           ; Minilab3           ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------------+------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path             ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------+---------+
+; transmit.sv                      ; yes             ; User SystemVerilog HDL File  ; I:/ECE554SP25_Minilab3/transmit.sv       ;         ;
+; spart.sv                         ; yes             ; User SystemVerilog HDL File  ; I:/ECE554SP25_Minilab3/spart.sv          ;         ;
+; receive.sv                       ; yes             ; User SystemVerilog HDL File  ; I:/ECE554SP25_Minilab3/receive.sv        ;         ;
+; Minilab3.v                       ; yes             ; User Verilog HDL File        ; I:/ECE554SP25_Minilab3/Minilab3.v        ;         ;
+; driver.sv                        ; yes             ; User SystemVerilog HDL File  ; I:/ECE554SP25_Minilab3/driver.sv         ;         ;
+; bus_interface.sv                 ; yes             ; User SystemVerilog HDL File  ; I:/ECE554SP25_Minilab3/bus_interface.sv  ;         ;
+; baud_generator.sv                ; yes             ; User SystemVerilog HDL File  ; I:/ECE554SP25_Minilab3/baud_generator.sv ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 83             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 134            ;
+;     -- 7 input functions                    ; 1              ;
+;     -- 6 input functions                    ; 27             ;
+;     -- 5 input functions                    ; 11             ;
+;     -- 4 input functions                    ; 26             ;
+;     -- <=3 input functions                  ; 69             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 100            ;
+;                                             ;                ;
+; I/O pins                                    ; 106            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 100            ;
+; Total fan-out                               ; 978            ;
+; Average fan-out                             ; 2.03           ;
++---------------------------------------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                     ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                   ; Entity Name    ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------+--------------+
+; |Minilab3                              ; 134 (22)            ; 100 (0)                   ; 0                 ; 0          ; 106  ; 0            ; |Minilab3                                             ; Minilab3       ; work         ;
+;    |driver:driver0|                    ; 15 (15)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |Minilab3|driver:driver0                              ; driver         ; work         ;
+;    |spart:spart0|                      ; 97 (0)              ; 84 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Minilab3|spart:spart0                                ; spart          ; work         ;
+;       |baud_generator:baud_generator0| ; 66 (66)             ; 44 (44)                   ; 0                 ; 0          ; 0    ; 0            ; |Minilab3|spart:spart0|baud_generator:baud_generator0 ; baud_generator ; work         ;
+;       |receive:receive0|               ; 11 (11)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |Minilab3|spart:spart0|receive:receive0               ; receive        ; work         ;
+;       |transmit:transmit0|             ; 20 (20)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |Minilab3|spart:spart0|transmit:transmit0             ; transmit       ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------+----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |Minilab3|driver:driver0|state                                                                        ;
++---------------------+----------------+---------------------+---------------+------------+--------------+--------------+
+; Name                ; state.TRANSMIT ; state.TRANSMIT_WAIT ; state.RECEIVE ; state.WAIT ; state.START2 ; state.START1 ;
++---------------------+----------------+---------------------+---------------+------------+--------------+--------------+
+; state.START1        ; 0              ; 0                   ; 0             ; 0          ; 0            ; 0            ;
+; state.START2        ; 0              ; 0                   ; 0             ; 0          ; 1            ; 1            ;
+; state.WAIT          ; 0              ; 0                   ; 0             ; 1          ; 0            ; 1            ;
+; state.RECEIVE       ; 0              ; 0                   ; 1             ; 0          ; 0            ; 1            ;
+; state.TRANSMIT_WAIT ; 0              ; 1                   ; 0             ; 0          ; 0            ; 1            ;
+; state.TRANSMIT      ; 1              ; 0                   ; 0             ; 0          ; 0            ; 1            ;
++---------------------+----------------+---------------------+---------------+------------+--------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++--------------------------------------------------------+----------------------------------------+
+; Register name                                          ; Reason for Removal                     ;
++--------------------------------------------------------+----------------------------------------+
+; spart:spart0|baud_generator:baud_generator0|db[10..15] ; Stuck at GND due to stuck port data_in ;
+; driver:driver0|state~4                                 ; Lost fanout                            ;
+; driver:driver0|state~5                                 ; Lost fanout                            ;
+; driver:driver0|state~6                                 ; Lost fanout                            ;
+; Total Number of Removed Registers = 9                  ;                                        ;
++--------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 100   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 58    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 69    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Inverted Register Statistics                                ;
++---------------------------------------------------+---------+
+; Inverted Register                                 ; Fan out ;
++---------------------------------------------------+---------+
+; spart:spart0|transmit:transmit0|tx_shft_reg[0]    ; 2       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[1]    ; 1       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[2]    ; 1       ;
+; spart:spart0|transmit:transmit0|tbr               ; 3       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[3]    ; 1       ;
+; spart:spart0|baud_generator:baud_generator0|db[2] ; 3       ;
+; spart:spart0|baud_generator:baud_generator0|db[1] ; 3       ;
+; spart:spart0|baud_generator:baud_generator0|db[8] ; 3       ;
+; spart:spart0|baud_generator:baud_generator0|db[6] ; 3       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[4]    ; 1       ;
+; spart:spart0|receive:receive0|RX_flop2            ; 4       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[5]    ; 1       ;
+; spart:spart0|receive:receive0|RX_flop1            ; 1       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[6]    ; 1       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[7]    ; 1       ;
+; spart:spart0|transmit:transmit0|tx_shft_reg[8]    ; 1       ;
+; Total number of inverted registers = 16           ;         ;
++---------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Minilab3|spart:spart0|transmit:transmit0|bit_cnt[1]                      ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Minilab3|spart:spart0|receive:receive0|bit_cnt[0]                        ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; Yes        ; |Minilab3|spart:spart0|baud_generator:baud_generator0|down_cnt_receive[8] ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |Minilab3|spart:spart0|transmit:transmit0|tx_shft_reg[1]                  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |Minilab3|databus[2]                                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Minilab3|driver:driver0|baud_rate[4]                                     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Minilab3|spart:spart0|bus_interface:bus_interface0|baud_write_location   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 100                         ;
+;     CLR               ; 15                          ;
+;     CLR SLD           ; 16                          ;
+;     ENA               ; 42                          ;
+;     ENA CLR           ; 27                          ;
+; arriav_io_obuf        ; 36                          ;
+; arriav_lcell_comb     ; 140                         ;
+;     arith             ; 32                          ;
+;         1 data inputs ; 32                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 107                         ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 26                          ;
+;         5 data inputs ; 11                          ;
+;         6 data inputs ; 27                          ;
+; boundary_port         ; 106                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.50                        ;
+; Average LUT depth     ; 1.90                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+    Info: Processing started: Tue Feb 18 16:31:35 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Minilab3 -c Minilab3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file transmit.sv
+    Info (12023): Found entity 1: transmit File: I:/ECE554SP25_Minilab3/transmit.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file spart.sv
+    Info (12023): Found entity 1: spart File: I:/ECE554SP25_Minilab3/spart.sv Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file receive.sv
+    Info (12023): Found entity 1: receive File: I:/ECE554SP25_Minilab3/receive.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file minilab3_tb.sv
+    Info (12023): Found entity 1: Minilab3_tb File: I:/ECE554SP25_Minilab3/Minilab3_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file minilab3.v
+    Info (12023): Found entity 1: Minilab3 File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file driver.sv
+    Info (12023): Found entity 1: driver File: I:/ECE554SP25_Minilab3/driver.sv Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file bus_interface.sv
+    Info (12023): Found entity 1: bus_interface File: I:/ECE554SP25_Minilab3/bus_interface.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file baud_generator.sv
+    Info (12023): Found entity 1: baud_generator File: I:/ECE554SP25_Minilab3/baud_generator.sv Line: 1
+Info (12127): Elaborating entity "Minilab3" for the top level hierarchy
+Info (12128): Elaborating entity "spart" for hierarchy "spart:spart0" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 71
+Info (12128): Elaborating entity "transmit" for hierarchy "spart:spart0|transmit:transmit0" File: I:/ECE554SP25_Minilab3/spart.sv Line: 56
+Info (12128): Elaborating entity "receive" for hierarchy "spart:spart0|receive:receive0" File: I:/ECE554SP25_Minilab3/spart.sv Line: 68
+Warning (10036): Verilog HDL or VHDL warning at receive.sv(14): object "receiving" assigned a value but never read File: I:/ECE554SP25_Minilab3/receive.sv Line: 14
+Info (12128): Elaborating entity "baud_generator" for hierarchy "spart:spart0|baud_generator:baud_generator0" File: I:/ECE554SP25_Minilab3/spart.sv Line: 81
+Warning (10230): Verilog HDL assignment warning at baud_generator.sv(57): truncated value with size 32 to match size of target (16) File: I:/ECE554SP25_Minilab3/baud_generator.sv Line: 57
+Info (12128): Elaborating entity "bus_interface" for hierarchy "spart:spart0|bus_interface:bus_interface0" File: I:/ECE554SP25_Minilab3/spart.sv Line: 97
+Info (12128): Elaborating entity "driver" for hierarchy "driver:driver0" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 83
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "databus[7]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+    Warning (13048): Converted tri-state node "databus[6]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+    Warning (13048): Converted tri-state node "databus[5]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+    Warning (13048): Converted tri-state node "databus[4]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+    Warning (13048): Converted tri-state node "databus[3]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+    Warning (13048): Converted tri-state node "databus[2]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+    Warning (13048): Converted tri-state node "databus[1]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+    Warning (13048): Converted tri-state node "databus[0]" into a selector File: I:/ECE554SP25_Minilab3/transmit.sv Line: 42
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[3]" and its non-tri-state driver. File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[29]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "driver:driver0|br_cfg_ff[0]" is converted into an equivalent circuit using register "driver:driver0|br_cfg_ff[0]~_emulated" and latch "driver:driver0|br_cfg_ff[0]~1" File: I:/ECE554SP25_Minilab3/driver.sv Line: 60
+    Warning (13310): Register "driver:driver0|br_cfg_ff[1]" is converted into an equivalent circuit using register "driver:driver0|br_cfg_ff[1]~_emulated" and latch "driver:driver0|br_cfg_ff[1]~5" File: I:/ECE554SP25_Minilab3/driver.sv Line: 60
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "GPIO[3]~synth" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 33
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 15
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 15
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 15
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 15
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 15
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 15
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 15
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 16
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 16
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 16
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 16
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 16
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 16
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 16
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 17
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 18
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 18
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 18
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 18
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 19
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 19
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 20
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 20
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 20
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 20
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 20
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 20
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 20
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+Info (286030): Timing-Driven Synthesis is running
+Warning (14632): Output pin "LEDR[9]" driven by bidirectional pin "GPIO[5]" cannot be tri-stated File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 26
+Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file I:/ECE554SP25_Minilab3/Minilab3.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK2_50" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 10
+    Warning (15610): No output dependent on input pin "CLOCK3_50" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 11
+    Warning (15610): No output dependent on input pin "CLOCK4_50" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 12
+    Warning (15610): No output dependent on input pin "KEY[1]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 23
+    Warning (15610): No output dependent on input pin "KEY[2]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 23
+    Warning (15610): No output dependent on input pin "KEY[3]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 23
+    Warning (15610): No output dependent on input pin "SW[0]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+    Warning (15610): No output dependent on input pin "SW[1]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+    Warning (15610): No output dependent on input pin "SW[2]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+    Warning (15610): No output dependent on input pin "SW[3]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+    Warning (15610): No output dependent on input pin "SW[4]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+    Warning (15610): No output dependent on input pin "SW[5]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+    Warning (15610): No output dependent on input pin "SW[6]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+    Warning (15610): No output dependent on input pin "SW[7]" File: I:/ECE554SP25_Minilab3/Minilab3.v Line: 29
+Info (21057): Implemented 272 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 52 output pins
+    Info (21060): Implemented 36 bidirectional pins
+    Info (21061): Implemented 166 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 107 warnings
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Tue Feb 18 16:31:45 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:13
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in I:/ECE554SP25_Minilab3/Minilab3.map.smsg.
+
+

@@ -1,0 +1,5 @@
+Info (10281): Verilog HDL Declaration information at transmit.sv(14): object "transmitting" differs only in case from object "TRANSMITTING" in the same scope File: I:/ECE554SP25_Minilab3/transmit.sv Line: 14
+Info (10281): Verilog HDL Declaration information at receive.sv(14): object "receiving" differs only in case from object "RECEIVING" in the same scope File: I:/ECE554SP25_Minilab3/receive.sv Line: 14
+Warning (10273): Verilog HDL warning at Minilab3_tb.sv(23): extended using "x" or "z" File: I:/ECE554SP25_Minilab3/Minilab3_tb.sv Line: 23
+Warning (10273): Verilog HDL warning at driver.sv(40): extended using "x" or "z" File: I:/ECE554SP25_Minilab3/driver.sv Line: 40
+Warning (10273): Verilog HDL warning at bus_interface.sv(20): extended using "x" or "z" File: I:/ECE554SP25_Minilab3/bus_interface.sv Line: 20
